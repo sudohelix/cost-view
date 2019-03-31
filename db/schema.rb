@@ -10,6 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_03_31_032851) do
+
+  create_table "spots", force: :cascade do |t|
+    t.datetime "runs_at", null: false
+    t.string "creative", null: false
+    t.integer "spend_cents", default: 0, null: false
+    t.integer "views", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
