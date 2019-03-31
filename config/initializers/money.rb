@@ -1,9 +1,8 @@
-# encoding : utf-8
+# frozen_string_literal: true
 
 Money.locale_backend = :i18n
 
 MoneyRails.configure do |config|
-
   # To set the default currency
   #
   config.default_currency = :cad
@@ -52,7 +51,9 @@ MoneyRails.configure do |config|
   #   priority:            1,
   #   iso_code:            "EU4",
   #   name:                "Euro with subunit of 4 digits",
+  # rubocop:disable Style/AsciiComments
   #   symbol:              "€",
+  # rubocop:enable Style/AsciiComments
   #   symbol_first:        true,
   #   subunit:             "Subcent",
   #   subunit_to_unit:     10000,

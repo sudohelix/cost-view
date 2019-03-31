@@ -1,4 +1,6 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require "test_helper"
 
 class SpotsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -16,8 +18,12 @@ class SpotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create spot" do
-    assert_difference('Spot.count') do
-      post spots_url, params: { spot: { creative: @spot.creative, runs_at: @spot.runs_at, spend_cents: @spot.spend, views: @spot.views } }
+    assert_difference("Spot.count") do
+      post spots_url, params: { spot: {
+        creative: @spot.creative,
+        runs_at: @spot.runs_at,
+        spend_cents: @spot.spend, views: @spot.views
+      } }
     end
 
     assert_redirected_to spot_url(Spot.last)
@@ -34,12 +40,17 @@ class SpotsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update spot" do
-    patch spot_url(@spot), params: { spot: { creative: @spot.creative, runs_at: @spot.runs_at, spend_cents: @spot.spend, views: @spot.views } }
+    patch spot_url(@spot), params: { spot: {
+      creative: @spot.creative,
+      runs_at: @spot.runs_at,
+      spend_cents: @spot.spend,
+      views: @spot.views
+    } }
     assert_redirected_to spot_url(@spot)
   end
 
   test "should destroy spot" do
-    assert_difference('Spot.count', -1) do
+    assert_difference("Spot.count", -1) do
       delete spot_url(@spot)
     end
 

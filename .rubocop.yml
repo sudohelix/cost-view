@@ -1,0 +1,74 @@
+Rails:
+  Enabled: true
+
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+
+Style/Documentation:
+  Enabled: false
+
+# Offense count: 37
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 90
+  IgnoreCopDirectives: true
+  Exclude:
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'Rakefile'
+    - 'db/seeds.rb'
+    - 'config/initializers/content_security_policy.rb'
+    - 'config/initializers/backtrace_silencers.rb'
+    - 'config/initializers/wrap_parameters.rb'
+    - 'config/initializers/money.rb'
+    - 'config/environments/**/*'
+
+Layout/Tab:
+  IndentationWidth: 2
+
+Style/SymbolArray:
+  MinSize: 2
+  EnforcedStyle: percent
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'bin/**/*'
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: when_needed
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+
+Style/NumericLiterals:
+  MinDigits: 4
+  Strict: true
+  Exclude:
+    - 'db/schema.rb'
+
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
+
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - 'config/application.rb'
+
+Style/EmptyMethod:
+  EnforcedStyle: compact

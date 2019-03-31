@@ -1,7 +1,7 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require "test_helper"
 
 class SpotTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should validate_presence_of(:creative)
 end

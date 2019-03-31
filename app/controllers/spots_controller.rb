@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SpotsController < ApplicationController
-  before_action :set_spot, only: [:show, :edit, :update, :destroy]
+  before_action :set_spot, only: %i[show edit update destroy]
 
   # GET /spots
   # GET /spots.json
@@ -9,8 +11,7 @@ class SpotsController < ApplicationController
 
   # GET /spots/1
   # GET /spots/1.json
-  def show
-  end
+  def show; end
 
   # GET /spots/new
   def new
@@ -18,8 +19,7 @@ class SpotsController < ApplicationController
   end
 
   # GET /spots/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /spots
   # POST /spots.json
@@ -28,7 +28,7 @@ class SpotsController < ApplicationController
 
     respond_to do |format|
       if @spot.save
-        format.html { redirect_to @spot, notice: 'Spot was successfully created.' }
+        format.html { redirect_to @spot, notice: "Spot was successfully created." }
         format.json { render :show, status: :created, location: @spot }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SpotsController < ApplicationController
   def update
     respond_to do |format|
       if @spot.update(spot_params)
-        format.html { redirect_to @spot, notice: 'Spot was successfully updated.' }
+        format.html { redirect_to @spot, notice: "Spot was successfully updated." }
         format.json { render :show, status: :ok, location: @spot }
       else
         format.html { render :edit }
@@ -56,19 +56,20 @@ class SpotsController < ApplicationController
   def destroy
     @spot.destroy
     respond_to do |format|
-      format.html { redirect_to spots_url, notice: 'Spot was successfully destroyed.' }
+      format.html { redirect_to spots_url, notice: "Spot was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_spot
-      @spot = Spot.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def spot_params
-      params.require(:spot).permit(:runs_at, :creative, :spend, :views)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_spot
+    @spot = Spot.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def spot_params
+    params.require(:spot).permit(:runs_at, :creative, :spend)
+  end
 end
