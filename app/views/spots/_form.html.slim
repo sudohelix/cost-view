@@ -1,0 +1,22 @@
+= form_with(model: spot, local: true) do |form|
+  - if spot.errors.any?
+    #error_explanation
+      h2 #{pluralize(spot.errors.count, "error")} prohibited this spot from being saved:
+      ul
+        - spot.errors.full_messages.each do |message|
+          li =message
+
+  .field
+    = form.label :runs_at
+    = form.datetime_select :runs_at
+
+  .field
+    = form.label :creative
+    = form.text_field :creative
+
+  .field
+    = form.label :spend
+    = form.number_field :spend
+
+  .actions
+    = form.submit

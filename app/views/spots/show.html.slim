@@ -1,0 +1,20 @@
+p#notice = notice
+
+p
+  strong Runs at
+  = @spot.runs_at
+
+p
+  strong Creative
+  = @spot.creative
+
+p
+  strong Spend
+  = @spot.spend
+
+p
+  strong Views
+  = @spot.views
+
+= link_to 'Edit', edit_spot_path(@spot)
+= link_to 'Back', spots_path
