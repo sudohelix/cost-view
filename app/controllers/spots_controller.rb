@@ -61,6 +61,23 @@ class SpotsController < ApplicationController
     end
   end
 
+  def upload; end
+
+  # POST /spots/batch_create
+  # POST /spots/batch_create.json
+  def batch_create
+    @result = Spots::BatchCreateSpotsFlow.call(csv_file: batch_create_params[:csv_file], klass: 'Spot', transform: Spot.csv_row_transform)
+    respond_to do |format|
+      if @result.success?
+        format.html { redirect_to spots_path, notice: "Batch upload started successfully." }
+        format.json { render json: ["OK"], status: :ok, location: spots_path }
+      else
+        format.html { render :upload }
+        format.json { render json: @result.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -71,5 +88,9 @@ class SpotsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def spot_params
     params.require(:spot).permit(:runs_at, :creative, :spend)
+  end
+
+  def batch_create_params
+    params.require(:spot).permit(:csv_file)
   end
 end

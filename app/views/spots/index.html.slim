@@ -9,17 +9,20 @@ table
       th Creative
       th Spend
       th Views
-      th colspan="3"
+      th CPV
+      th colspan="3" Actions
   tbody
     - @spots.each do |spot|
       tr
         td = spot.runs_at
         td = spot.creative
-        td = spot.spend
+        td = humanized_money_with_symbol spot.spend
         td = spot.views
+        td = humanized_money_with_symbol spot.cpv
         td = link_to 'Show', spot
         td = link_to 'Edit', edit_spot_path(spot)
         td = link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }
 br
 
-= link_to 'New Spot', new_spot_path
+= link_to 'New Spot', new_spot_path, class: "button"
+= link_to "Upload Spots", upload_spots_path, class: "button"

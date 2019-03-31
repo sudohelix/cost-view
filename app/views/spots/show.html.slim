@@ -1,5 +1,5 @@
 p#notice = notice
-
+h1 Spot
 p
   strong Runs at
   = @spot.runs_at
@@ -10,11 +10,11 @@ p
 
 p
   strong Spend
-  = @spot.spend
+  = humanized_money_with_symbol @spot.spend
 
 p
   strong Views
   = @spot.views
 
-= link_to 'Edit', edit_spot_path(@spot)
-= link_to 'Back', spots_path
+= link_to 'Edit', edit_spot_path(@spot), class: "button"
+= link_to 'Back', spots_path, class: "button"
