@@ -1,0 +1,10 @@
+.git
+node_modules
+db/*.sqlite3
+.gitignore
+tmp/cache
+tmp/pids
+tmp/sockets
+tmp/development_secret.txt
+tmp/restart.txt
+Dockerfile
