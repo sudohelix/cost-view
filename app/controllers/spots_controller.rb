@@ -66,10 +66,14 @@ class SpotsController < ApplicationController
   # POST /spots/batch_create
   # POST /spots/batch_create.json
   def batch_create
-    @result = Spots::BatchCreateSpotsFlow.call(csv_file: batch_create_params[:csv_file], klass: 'Spot', transform: Spot.csv_row_transform)
+    @result = BatchCreateSpotsFlow.call(csv_file: batch_create_params[:csv_file],
+                                        klass: "Spot",
+                                        transform: Spot.csv_row_transform)
     respond_to do |format|
       if @result.success?
-        format.html { redirect_to spots_path, notice: "Batch upload started successfully." }
+        format.html do
+          redirect_to spots_path, notice: "Batch upload started successfully."
+        end
         format.json { render json: ["OK"], status: :ok, location: spots_path }
       else
         format.html { render :upload }
@@ -91,6 +95,6 @@ class SpotsController < ApplicationController
   end
 
   def batch_create_params
-    params.require(:spot).permit(:csv_file)
+    params.require(:batch).permit(:csv_file)
   end
 end

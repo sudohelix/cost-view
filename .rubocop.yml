@@ -24,6 +24,13 @@ Metrics/LineLength:
     - 'config/initializers/wrap_parameters.rb'
     - 'config/initializers/money.rb'
     - 'config/environments/**/*'
+    - 'test/**/*'
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/AbcSize:
+  Max: 25
 
 Layout/Tab:
   IndentationWidth: 2

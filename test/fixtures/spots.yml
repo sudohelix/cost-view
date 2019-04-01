@@ -3,11 +3,11 @@
 one:
   runs_at: 2019-03-30 23:28:51
   creative: MyString
-  spend_cents: 1
+  spend_cents: 100
   views: 1
 
-two:
+zero_views:
   runs_at: 2019-03-30 23:28:51
   creative: MyString
-  spend_cents: 1
-  views: 1
+  spend_cents: 100
+  views: 0

@@ -1,7 +1,7 @@
 p#notice = notice
-
 h1 Spots
-
+= link_to 'New Spot', new_spot_path, class: "button"
+= link_to "Upload Spots", upload_spots_path, class: "button"
 table
   thead
     tr
@@ -22,7 +22,3 @@ table
         td = link_to 'Show', spot
         td = link_to 'Edit', edit_spot_path(spot)
         td = link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }
-br
-
-= link_to 'New Spot', new_spot_path, class: "button"
-= link_to "Upload Spots", upload_spots_path, class: "button"

@@ -3,6 +3,13 @@
 Rails.application.routes.draw do
   root to: "spots#index"
 
+  resources :rotations do
+    collection do
+      get "upload"
+      post "batch_create"
+    end
+  end
+
   resources :spots do
     collection do
       get "upload"

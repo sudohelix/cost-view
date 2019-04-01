@@ -56,4 +56,19 @@ class SpotsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to spots_url
   end
+
+  test "should get upload" do
+    get upload_spots_url
+    assert_response :success
+  end
+
+  test "should batch_create spots" do
+    bulk_spots = fixture_file_upload("/files/spots.csv", "text/csv")
+
+    assert_difference -> { Spot.count }, 7 do
+      post batch_create_spots_url, params: { batch: { csv_file: bulk_spots } }
+    end
+    assert_redirected_to spots_path
+    assert_equal"Batch upload started successfully.", flash[:notice]
+  end
 end

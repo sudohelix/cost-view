@@ -1,16 +1,4 @@
 h1 Batch Upload Spots
-= form_tag(batch_create_spots_path, local: true, multipart: true) do
-  - if @result&.errors&.any?
-    #error_explanation
-      h2 #{pluralize(@result.errors.count, "error")} prohibited this spot from being saved:
-      ul
-        - @result.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = label_tag "Upload CSV File"
-    = file_field_tag 'spot[csv_file]', accept: 'text/csv'
-
-  = submit_tag "Upload Now", class: "button"
+== render "batches/form", action_path: batch_create_spots_path
 
 = link_to "Back", spots_path

@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_31_032851) do
+ActiveRecord::Schema.define(version: 2019_03_31_234558) do
+
+  create_table "rotations", force: :cascade do |t|
+    t.time "start"
+    t.time "end"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "spots", force: :cascade do |t|
     t.datetime "runs_at", null: false

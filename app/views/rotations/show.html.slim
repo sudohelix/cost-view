@@ -1,0 +1,15 @@
+p#notice = notice
+h1 Rotation
+p
+  strong Start:
+  = @rotation.start
+p
+  strong End:
+  = @rotation.end
+p
+  strong Name:
+  = @rotation.name
+
+=> link_to 'Edit', edit_rotation_path(@rotation)
+'|
+=< link_to 'Back', rotations_path
