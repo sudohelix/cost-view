@@ -1,0 +1,14 @@
+.top-bar
+  .top-bar-left
+    ul(class="dropdown menu" data-dropdown-menu)
+      li class="menu-text" CostView
+      li
+        a href="#" Spots
+        ul class="menu vertical"
+          li = link_to "Spots", spots_path
+          li = link_to "Batch Upload", upload_spots_path
+      li
+        a href="#" Rotations
+        ul class="menu vertical"
+          li = link_to "Rotations", rotations_path
+          li = link_to "Batch Upload", upload_rotations_path
