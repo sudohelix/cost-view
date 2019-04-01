@@ -13,7 +13,7 @@ table
   tbody
     - @spots.each do |spot|
       tr
-        td = spot.runs_at
+        td = format_date spot.runs_at
         td = spot.creative
         td = humanized_money_with_symbol spot.spend
         td = spot.views

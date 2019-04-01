@@ -12,8 +12,8 @@ table
   tbody
     - @rotations.each do |rotation|
       tr
-        td = rotation.start
-        td = rotation.end
+        td = format_time rotation.start
+        td = format_time rotation.end
         td = rotation.name
         td = link_to 'Show', rotation
         td = link_to 'Edit', edit_rotation_path(rotation)
