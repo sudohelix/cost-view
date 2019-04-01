@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :rotations do
     collection do
       get "upload"
+      get "batch_create", to: redirect("/rotations/upload")
       post "batch_create"
     end
   end
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :spots do
     collection do
       get "upload"
+      get "batch_create", to: redirect("/spots/upload")
       post "batch_create"
     end
   end

@@ -54,12 +54,12 @@ class RotationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should batch_create spots" do
-    bulk_rotationss = fixture_file_upload("/files/rotations.csv", "text/csv")
+    bulk_rotations = fixture_file_upload("/files/rotations.csv", "text/csv")
 
     assert_difference -> { Rotation.count }, 3 do
-      post batch_create_rotations_url, params: { batch: { csv_file: bulk_rotationss } }
+      post batch_create_rotations_url, params: { batch: { csv_file: bulk_rotations } }
     end
     assert_redirected_to rotations_path
-    assert_equal"Batch upload started successfully.", flash[:notice]
+    assert_equal "Batch upload started successfully.", flash[:notice]
   end
 end

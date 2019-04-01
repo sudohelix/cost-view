@@ -1,10 +1,8 @@
 = form_tag(action_path, local: true, multipart: true) do
-  - if @result&.errors&.any?
+  - if @result&.failure?
     #error_explanation
-      h2 #{pluralize(@result.errors.count, "error")} prohibited this rotation from being saved:
-      ul
-        - @result.errors.full_messages.each do |message|
-          li = message
+      h2 Error encountered when uploading batch data:
+      ul = @result.message
 
   .field
     = label_tag "Upload CSV File"

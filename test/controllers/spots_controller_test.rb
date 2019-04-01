@@ -69,6 +69,6 @@ class SpotsControllerTest < ActionDispatch::IntegrationTest
       post batch_create_spots_url, params: { batch: { csv_file: bulk_spots } }
     end
     assert_redirected_to spots_path
-    assert_equal"Batch upload started successfully.", flash[:notice]
+    assert_equal "Batch upload started successfully.", flash[:notice]
   end
 end
