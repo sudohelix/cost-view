@@ -1,6 +1,25 @@
 # frozen_string_literal: true
 
 class Rotation < ApplicationRecord
+
+  TIME_FORMAT = "%k:%M" # "ie. 23:45"
+
   validates :start, :end, presence: true
   validates :name, presence: { allow_blank: false }
+
+  def spots_during
+    start_time, end_time = [start, self.end].map(&method(:spot_time_format))
+
+    Spot.select("*, DATE(runs_at) as date, TIME(runs_at) as time")
+        .where("time BETWEEN :start_time and :end_time",
+               start_time: start_time,
+               end_time: end_time)
+        .order("creative, date ASC")
+  end
+
+  private
+
+  def spot_time_format(dt)
+    dt.strftime(TIME_FORMAT)
+  end
 end
