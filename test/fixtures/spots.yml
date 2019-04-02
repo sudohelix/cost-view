@@ -1,13 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  runs_at: 2019-03-30 23:28:51
+  runs_at: 2018-03-30 23:28:51
   creative: MyString
-  spend_cents: 100
-  views: 1
+  spend_cents: 10000
+  views: 10
 
 zero_views:
-  runs_at: 2019-03-30 23:28:51
+  runs_at: 2018-03-30 23:28:51
   creative: MyString
   spend_cents: 100
   views: 0
+

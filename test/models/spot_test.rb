@@ -44,13 +44,13 @@ class SpotTest < ActiveSupport::TestCase
     end
   end
 
-  test "#cpv should return the spend if there are no views" do
+  test "#cpv should return the Float::INFINITY if there are no views" do
     @spot = spots(:zero_views)
-    assert_equal Money.new(100), @spot.cpv
+    assert_equal Float::INFINITY, @spot.cpv
   end
 
   test "#cpv should return the cost / view - cost per view - for non-zero views" do
     @spot = Spot.new(spend_cents: 10_000, views: 10)
-    assert_equal Money.new(1_000), @spot.cpv
+    assert_equal 10.0, @spot.cpv.to_f
   end
 end

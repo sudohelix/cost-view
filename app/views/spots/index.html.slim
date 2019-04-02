@@ -17,7 +17,7 @@ table
         td = spot.creative
         td = humanized_money_with_symbol spot.spend
         td = spot.views
-        td = humanized_money_with_symbol spot.cpv
+        td = spot.cpv.to_f.infinite? ? "N/A" : humanized_money_with_symbol(spot.cpv)
         td = link_to 'Show', spot
         td = link_to 'Edit', edit_spot_path(spot)
         td = link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' }

@@ -18,5 +18,12 @@ Rails.application.routes.draw do
       post "batch_create"
     end
   end
+
+  namespace :reports do
+    namespace :rotation_reports do
+      get "cpv_per_day"
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

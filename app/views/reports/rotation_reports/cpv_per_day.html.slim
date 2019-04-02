@@ -1,0 +1,22 @@
+h1 CPV by Rotation by Day
+- if @report.spend_by_date.empty?
+  h4 No reports available, create Spots and Rotations first!
+
+- @report.spend_by_date.each do |r|
+  h2 = r[:name]
+  div Start: #{format_time r[:start]}
+  div End: #{format_time r[:end]}
+  table.unstriped
+    thead
+      tr
+        th width="600" Day
+        th width="400" Total Spend
+        th width="400" Total Views
+        th width="200" Total CPV
+      tbody
+        - r[:spend_by_date].each do |spend|
+          tr
+            td = spend[:date]
+            td = humanized_money_with_symbol(spend[:total_spend])
+            td = spend[:total_views]
+            td = spend[:total_cpv].to_f.infinite? ? "N/A" : humanized_money_with_symbol(spend[:total_cpv])

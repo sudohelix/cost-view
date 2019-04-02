@@ -17,6 +17,6 @@ class Spot < ApplicationRecord
   end
 
   def cpv
-    views.zero? ? spend : spend / views
+    views.zero? ? Float::INFINITY : spend / views
   end
 end

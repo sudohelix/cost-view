@@ -1,24 +1,39 @@
-# README
+# Tatari Hiring Homework
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a quick little homework assignment that we give to our potential
+hires.  It's mostly intended to just make sure that people can actually
+write code, but also serves as a decent indicator to how they think about
+data and write code to make use of data.
 
-Things you may want to cover:
+## Timeboxing
 
-* Ruby version
+We want to be respectful of your time, and the fact of the matter is
+that this is essentially throwaway code, so any work on this should be
+timeboxed to an hour or two, tops.  If it's not "finished," that's fine;
+seeing in-progress code is just as enlightening!
 
-* System dependencies
+## Description
 
-* Configuration
+Write a program in the language of your choosing that:
 
-* Database creation
+ * Consumes both `rotations.csv` and `spots.csv`
+ * Generates output that shows cost per view by two dimensions:
+   * CPV by creative
+   * CPV by rotation by day
 
-* Database initialization
+**No Jupyter notebooks, please!**  We love them here and use them ourselves
+at times, but this assignment is about seeing how you write *programs*, and
+*not* about how you do data analysis.  Show us your best software, not your
+best matplotlib formatting.
 
-* How to run the test suite
+### Details
 
-* Services (job queues, cache servers, search engines, etc.)
+First, this is intentionally a little underspecified.  Feel free to
+ask questions, or to just make assumptions.  If you *do* make any
+assumptions for the sake of expediency, document 'em so we know you
+considered them!
 
-* Deployment instructions
+For the purpose of this exercise, here's some terminology:
 
-* ...
+ * "Creative" - Business lingo for a TV ad
+ * "Rotation" - The timerange on a TV network that an ad airs in
