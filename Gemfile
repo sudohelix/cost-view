@@ -65,10 +65,10 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "selenium-webdriver"
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem "webdrivers", "~> 3.7.2"
   gem "mocha"
   gem "shoulda", "~> 3.5"
   gem "shoulda-matchers", "~> 2.0"
+  gem "webdrivers", "~> 3.7.2"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

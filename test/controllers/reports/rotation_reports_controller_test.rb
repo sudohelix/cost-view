@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require "test_helper"
 
 class Reports::RotationReportsControllerText < ActionDispatch::IntegrationTest
   test "should get cpv_per_day" do

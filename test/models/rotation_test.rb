@@ -9,13 +9,13 @@ class RotationTest < ActiveSupport::TestCase
 
   def setup
     @spots = [
-        @first = Spot.new(runs_at: "01/02/2016 8:30 AM", creative: "TEST001H", spend_cents: 12050, views: 100),
-        @second = Spot.new(  runs_at: "01/02/2016 11:30 AM", creative: "TEST001H", spend_cents: 24050, views: 110),
-        @third = Spot.new( runs_at: "01/02/2016 3:30 PM", creative: "TEST002H", spend_cents: 50000, views: 80),
-        @fourth = Spot.new( runs_at: "01/02/2016 3:34 PM", creative: "TEST002H", spend_cents: 40000, views: 90),
-        @fifth = Spot.new( runs_at: "01/02/2016 3:40 PM", creative: "TEST001H", spend_cents: 40000, views: 110),
-        @sixth = Spot.new( runs_at: "02/02/2016 7:30 AM", creative: "TEST001H", spend_cents: 70000, views: 200),
-        @seventh = Spot.new( runs_at: "02/02/2016 7:30 PM", creative: "TEST002H", spend_cents: 70000, views: 300),
+      @first = Spot.new(runs_at: "01/02/2016 8:30 AM", creative: "TEST001H", spend_cents: 12_050, views: 100),
+      @second = Spot.new(runs_at: "01/02/2016 11:30 AM", creative: "TEST001H", spend_cents: 24_050, views: 110),
+      @third = Spot.new(runs_at: "01/02/2016 3:30 PM", creative: "TEST002H", spend_cents: 50_000, views: 80),
+      @fourth = Spot.new(runs_at: "01/02/2016 3:34 PM", creative: "TEST002H", spend_cents: 40_000, views: 90),
+      @fifth = Spot.new(runs_at: "01/02/2016 3:40 PM", creative: "TEST001H", spend_cents: 40_000, views: 110),
+      @sixth = Spot.new(runs_at: "02/02/2016 7:30 AM", creative: "TEST001H", spend_cents: 70_000, views: 200),
+      @seventh = Spot.new(runs_at: "02/02/2016 7:30 PM", creative: "TEST002H", spend_cents: 70_000, views: 300)
     ]
   end
 
